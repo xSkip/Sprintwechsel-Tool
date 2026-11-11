@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f3a5f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Sprintwechsel">
+  <title>Sprintwechsel-Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Sprintwechsel</h1>
+    <div class="team-row">
+      <label for="team-select" class="sr-only">Team</label>
+      <select id="team-select"></select>
+      <button type="button" id="team-edit" class="icon-btn" aria-label="Teams verwalten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></button>
+    </div>
+  </header>
+
+  <main id="method-view"></main>
+
+  <dialog id="team-dialog">
+    <form method="dialog" id="team-form">
+      <h2>Teams verwalten</h2>
+      <ul id="team-list" class="team-list"></ul>
+
+      <fieldset>
+        <legend id="team-form-title">Neues Team</legend>
+        <label>Name
+          <input id="team-name" type="text" autocomplete="off" maxlength="40">
+        </label>
+        <label>Vorgehensweise im Planning
+          <select id="team-method"></select>
+        </label>
+        <p id="team-method-hint" class="hint"></p>
+        <button type="button" id="team-save" class="btn primary">Team hinzufügen</button>
+        <button type="button" id="team-cancel-edit" class="btn link" hidden>Bearbeitung abbrechen</button>
+      </fieldset>
+
+      <button type="submit" class="btn">Schließen</button>
+    </form>
+  </dialog>
+
+  <script src="calc.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
